@@ -191,6 +191,15 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     string private _name;
     string private _symbol;
 
+    address constant private staking = 0x318cBF186eB13C74533943b054959867eE44eFFE;
+    address constant private advisors = 0x318cBF186eB13C74533943b054959867eE44eFFE;
+    address constant private projectDevelopment = 0x318cBF186eB13C74533943b054959867eE44eFFE;
+    address constant private liquidity = 0x318cBF186eB13C74533943b054959867eE44eFFE;
+    address constant private ico = 0x318cBF186eB13C74533943b054959867eE44eFFE;
+    address constant private treasury = 0x318cBF186eB13C74533943b054959867eE44eFFE;
+    address constant private marketing = 0x318cBF186eB13C74533943b054959867eE44eFFE;
+    address constant private team = 0x318cBF186eB13C74533943b054959867eE44eFFE;
+
     /**
      * @dev Sets the values for {name} and {symbol}.
      *
@@ -200,9 +209,20 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * All two of these values are immutable: they can only be set once during
      * construction.
      */
-    constructor(string memory name_, string memory symbol_) {
-        _name = name_;
-        _symbol = symbol_;
+    constructor() {
+        _name = "HundredPad";
+        _symbol = "HUNPAD";
+
+        //setting total supply and distribution
+        _totalSupply = 1000000000000000000000000;
+        _balances[staking] = (_totalSupply * 15) / 100;
+        _balances[advisors] = (_totalSupply * 2) / 100;
+        _balances[projectDevelopment] = (_totalSupply * 11) / 100;
+        _balances[liquidity] = (_totalSupply * 7) / 100;
+        _balances[ico] = (_totalSupply * 30) / 100;
+        _balances[treasury] = (_totalSupply * 15) / 100;
+        _balances[marketing] = (_totalSupply * 10) / 100;
+        _balances[team] = (_totalSupply * 10) / 100;
     }
 
     /**

@@ -5,6 +5,7 @@
       <title>HundredPad</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <meta charset="UTF-8">
+      <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
       <link rel="stylesheet" type="text/css" href="{% static 'css/main/bootstrap.min.css' %}" />
       <link rel="stylesheet" type="text/css" href="{% static 'css/main/style.css' %}" />
       <link rel="stylesheet" type="text/css" href="{% static 'css/main/font-awesome.css' %}" />
@@ -34,7 +35,7 @@
                   <li><a href="" class="">Apply your Project</a></li>
                   <li><a href="" class="">FAQ</a></li>
                   <li><a href="" class="">White Paper</a></li>
-                  <li><a href="" class="btn loginBtn footerclass">Register</a></li>
+                  <li><a href="#" class="btn loginBtn footerclass" id="connect-button" onclick="connect();">CONNECT WALLET</a></li>
                </ul>
             </div>
          </div>
@@ -863,5 +864,65 @@
       <script type="text/javascript" src="{% static 'js/main/index.js' %}"></script>
       <script type="text/javascript" src="{% static 'js/main/wow.js' %}"></script>
       <script type="text/javascript" src="{% static 'js/main/owl.carousel.js' %}"></script>
+      <script>
+        //Get the button
+        let mybutton = document.getElementById("btn-back-to-top");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+        scrollFunction();
+        };
+
+        function scrollFunction() {
+        if (
+            document.body.scrollTop > 500 ||
+            document.documentElement.scrollTop > 500
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        mybutton.addEventListener("click", backToTop);
+
+        function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <script type="text/javascript">
+
+            window.onload = function () {
+              load();
+            } 
+
+            async function connect() {
+                await load();
+                const account = await getAccount();
+            }
+
+            async function load() {
+                await loadWeb3();
+                //window.contract = await loadContract();
+            }
+            
+            async function loadWeb3() {
+                if (window.ethereum) {
+                  window.web3 = new Web3(window.ethereum);
+                }
+                else {
+                    setTimeout(function(){
+                        window.alert('Metamask is not Installed! https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn')
+                    }, 5000);
+                }
+              }
+            
+            async function getAccount() {
+                const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                document.getElementById('connect-button').innerHTML = 'CONNECTED';
+                return accounts[0];
+            }
+      </script>
    </body>
 </html>
