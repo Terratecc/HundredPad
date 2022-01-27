@@ -1,47 +1,73 @@
 @font-face {
-    font-family: 'PressStart2P-Regular';
-    src: url(fontfamily/PressStart2P-Regular.ttf);
+    font-family: 'FiraCode-Regular';
+    src: url('fontfamily/FiraCode-Regular.ttf');
+}
+@font-face {
+    font-family: 'FiraCode-Medium';
+    src: url('fontfamily/FiraCode-Medium.ttf');
+}
+@font-face {
+    font-family: 'FiraCode-SemiBold';
+    src: url('fontfamily/FiraCode-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'FiraCode-Bold';
+    src: url('fontfamily/FiraCode-Bold.ttf');
 }
 body {
     margin: 0;
     padding: 0;
-    font-family: 'PressStart2P-Regular';
+    font-family: 'FiraCode-Regular';
+    background: #180F31;
 }
 /*********** Header ******/
 .mynav{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     background-image: linear-gradient(to right, #3D3456 , #3D374E);
     border-radius: 0;
     margin-bottom: 0;
     border: 0;
 }
 .mynav .navbar-right {
-    margin-top: 15px;
+    margin-top: 5px;
 }
 .mynav .navbar-right li{
     margin-right: 10px;
 }
 .mynav .navbar-right li a {
     color: #00FFE0;
-    font-size: 12px;
+    font-size: 15px;
     transition: 300ms ease-out !important;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .mynav .navbar-right li a:hover{
     color: #FF84F3;
+    background: none;
+}
+.mynav .dropdown-menu{
+    background-image: linear-gradient(to right, #3D3456 , #3D374E);
+    margin-top: 20px !important;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+    background: none !important;
+    color: #FF84F3 !important;
 }
 .loginBtn {
-    background: radial-gradient(110.67% 3206.88% at 2.77% 24.47%, #FFFFFF 0%, #FF84F3 100%);
+    background: radial-gradient(110.67% 3206.88% at 2.77% 24.47%, #FFFFFF 0%, #FF84F3 100%) !important;
     border-radius: 20px;
     padding: 10px 30px !important;
     margin-top: 5px;
     color: #291A54 !important;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'FiraCode-SemiBold';
 }
 .logo {
-    height: 80px;
+    height:60px;
 }
 .banner{
-    background: url("/static/images/main/banner-home.png");
+   /* background: url(../images/banner-home.png);
+    */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% 100%;
@@ -55,8 +81,10 @@ body {
 .staking-token h2{
     text-align: center;
     color: #fff;
-    font-size: 34px;
+    font-size: 44px;
     margin-bottom: 25px;
+    font-family: 'FiraCode-Medium';
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7), 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 .staking-token .d-flex{
     display: flex;
@@ -64,25 +92,37 @@ body {
     justify-content: center;
 }
 .staking-token .d-flex .form-control{
-    width: 150px;
+    width: 220px;
     background: none;
     border: 3px solid #00FFE0;
-    border-radius: 8px;
-    margin-right: 10px;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 2px rgba(0, 255, 224, 0.7);
+    border-radius: 12px;
+    color: #fff;
+    margin-right: 15px;
 }
+.mt30{
+    margin-top: 30px;
+}
+
+
 .staking-token .btn-staking{
     background: radial-gradient(110.67% 3206.88% at 2.77% 24.47%, #FFFFFF 0%, #FF84F3 100%);
     border-radius: 20px;
-    padding: 8px 30px !important;
-    margin-top: 15px;
+    padding: 6px 35px !important;
+    margin-top: 0px;
     color: #291A54 !important;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 17px;
+    font-family: 'FiraCode-Medium';
 }
 .staking-token p{
     margin-top: 20px;
     color: #00FFE0;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 10px;
-    line-height: 20px;
+    font-size: 16px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    line-height: 32px;
 }
 .staking-token p .caps{
     text-transform: uppercase;
@@ -91,41 +131,48 @@ body {
 .project-section{
     padding-top: 50px;
     padding-bottom: 50px;
+}
+.project_sectionBox{
     background-image: linear-gradient(to right, #271B49 , #221E2D);
+    box-shadow: 0px -7px 20px rgba(0, 0, 0, 0.25);
+    padding: 25px 30px;
+    border-radius: 33px;
 }
 .project-section h2{
     color: #FFFFFF;
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7), 0px 0px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 30px;
-    font-size: 28px;
+    font-size: 38px;
+    font-family: 'FiraCode-Medium';
 }
 .projectBox{
-    border: 4px solid #18A0FB;
+    border: 3px solid #62FFED;
     box-sizing: border-box;
     background-image: linear-gradient(to right, #251D3B , #47396C);
     padding: 16px 20px;
     border-radius: 18px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     cursor: pointer;
 }
 .projectBox .d-flex{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 .projectBox .media .media-body{
-    padding-top: 15px;
-    padding-left: 10px;
+    padding-top: 12px;
+    padding-left: 5px;
     width: auto;
 }
 .projectBox .media .media-body h4{
     color: #FFFFFF;
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7), 0px 0px 4px rgba(0, 0, 0, 0.25);
-    font-size: 13px;
+    font-size: 22px;
+    font-family: 'FiraCode-Medium';
 }
 .projectBox p{
-    font-size: 13px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 28px;
     color: #00FFE0;
     margin-bottom: 25px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -134,8 +181,9 @@ body {
     margin-top: 25px;
 }
 .token_number h5{
-    font-size: 10px;
-    line-height: 10px;
+    font-size: 14px;
+    font-family: 'FiraCode-Medium';
+    line-height: 20px;
     color: #FF84F3;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -151,13 +199,16 @@ body {
 }
 .social-link ul li{
     display: inline;
-    margin-right: 2px;
+    margin-right: 15px;
 }
 .social-btn .btn-staking{
     background: radial-gradient(110.67% 3206.88% at 2.77% 24.47%, #FFFFFF 0%, #FF84F3 100%);
-    border-radius: 20px;
-    padding: 8px 30px !important;
+    border-radius: 3px;
+    padding: 6px 20px !important;
     color: #291A54 !important;
+    font-family: 'FiraCode-Medium';
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .text-flex{
     display: flex;
@@ -166,7 +217,7 @@ body {
     margin-bottom: 10px;
 }
 .text-flex .progress-text{
-    font-size: 12px;
+    font-size: 14px;
     line-height: 12px;
    /* identical to box height */
     color: #00FFE0;
@@ -185,7 +236,7 @@ body {
 }
 .progress-section .progress{
     background-color: #291A54;
-    height: 12px;
+    height: 9px;
     border-radius: 25px;
     margin-bottom: 40px;
 }
@@ -195,15 +246,21 @@ body {
 }
 .text-middle {
     position: absolute;
-    right: -45px;
+    right: 5px;
+    margin-top: -4px;
     color: #fff;
     font-size: 12px;
 }
+.modal-body .text-middle{
+    right: -20px;
+}
 .coming-soon{
-    padding-top: 60px;
+    padding-top: 10px;
 }
 .coming-soon h4{
     color: #fff;
+    font-size: 30px;
+    font-family: 'FiraCode-Medium';
     margin-bottom: 30px;
 }
 /*** Slider *****/
@@ -305,6 +362,7 @@ body {
     left: auto;
     width: 50px;
     opacity: 1 !important;
+    margin-right: -60px;
 }
 .carousel.vertical .carousel-control.up {
     top: 0;
@@ -355,7 +413,7 @@ body {
     padding-bottom: 0;
    /* background: rgba(62, 61, 66, 0.5);
     */
-    background: url("/static/images/main/footer-bg.png");
+    background: url('/static/images/footer-bg.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -423,7 +481,7 @@ body {
     margin-top: 80px;
 }
 #myModal .modal-dialog{
-    width: 500px;
+    max-width: 500px;
 }
 /************ Extras ***********/
 .btnStyle {
@@ -509,7 +567,7 @@ body {
         font-size: 12px;
    }
     .projectBox .media .media-body h4{
-        font-size: 12px;
+        font-size: 16px;
    }
     .coming-soon {
         padding-top: 20px;
@@ -520,6 +578,34 @@ body {
     .owl-carousel .owl-nav{
         display: none !important;
    }
+    .mynav .dropdown-menu{
+        text-align: center;
+        margin-top: 0px !important;
+   }
+    .mynav .dropdown-menu li a{
+        color: #00FFE0 !important;
+   }
+    .loginBtn{
+        display: inline-block !important;
+   }
+    .staking-token h2{
+        font-size: 34px;
+   }
+    .staking-token .d-flex .form-control{
+        margin-right: 0;
+   }
+    .project-section {
+        padding-top: 0;
+   }
+    .project_sectionBox{
+        padding: 25px 15px;
+   }
+    .text-middle{
+        right: -20px;
+   }
+    .carousel.vertical .carousel-control{
+        margin-right: -15px;
+   }
 }
 @media (min-width: 768px) and (max-width: 991px){
     .logo {
@@ -529,9 +615,15 @@ body {
         margin-right: 0;
    }
     .mynav .navbar-right li a{
-        font-size: 8px;
+        font-size: 13px;
         padding-right: 10px;
         padding-left: 10px;
+   }
+    .carousel.vertical .carousel-control{
+        margin-right: -30px;
+   }
+    .projectBox .media .media-body h4{
+        font-size: 18px;
    }
     .loginBtn{
         padding: 8px 20px !important;
@@ -556,21 +648,33 @@ body {
     .owl-carousel .owl-nav{
         display: none !important;
    }
+   .text-middle{
+        right: 15px;
+    }
+    .modal-body .text-middle{
+        right: -20px;
+    }
+
 }
 @media (min-width: 992px) and (max-width: 1199px){
     .logo {
-        height: 70px;
+        height: 65px;
    }
     .mynav .navbar-right li {
         margin-right: 0;
    }
     .mynav .navbar-right li a{
-        font-size: 10px;
+        font-size: 15px;
    }
     .owl-carousel .owl-nav{
         display: none !important;
    }
+    .carousel.vertical .carousel-control{
+        margin-right: -30px;
+   }
+   .modal-body .text-middle{
+        right: -20px;
+    }
 }
 @media (min-width: 1480px) and (max-width: 5120px){
-    
 }
