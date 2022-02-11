@@ -9,6 +9,21 @@ from .forms import *
 
 def homepage(request):
 	context = {}
+	template = loader.get_template('main/index2.html')
+	return HttpResponse(template.render(context, request))
+
+def roadmap(request):
+	context = {}
+	template = loader.get_template('main/roadmap.html')
+	return HttpResponse(template.render(context, request))
+
+def tokenomics(request):
+	context = {}
+	template = loader.get_template('main/token.html')
+	return HttpResponse(template.render(context, request))
+
+def launchpad(request):
+	context = {}
 	template = loader.get_template('main/index.html')
 	return HttpResponse(template.render(context, request))
 
